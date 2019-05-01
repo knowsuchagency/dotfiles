@@ -1,3 +1,8 @@
+"""
+reference for user xonsh config
+at ~/xonshrc
+"""
+
 set_path()
 set_prompt()
 set_aliases()

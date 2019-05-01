@@ -1,3 +1,8 @@
+"""
+reference for the base xonsh
+config at /etc/xonshrc
+"""
+
 from functools import wraps
 from pathlib import Path
 from contextlib import contextmanager
