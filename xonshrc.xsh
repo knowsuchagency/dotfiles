@@ -2,12 +2,12 @@
 reference for user xonsh config
 at ~/xonshrc
 """
+from main import *
 
 set_path()
 set_prompt()
 set_aliases()
 set_xontribs()
 
-with _cd(Path(Path.home(), 'projects', 'dotfiles')):
-    from env import *
-    from atlassian import *
+from env import *
+from atlassian import *
