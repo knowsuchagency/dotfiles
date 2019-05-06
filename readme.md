@@ -2,7 +2,7 @@
 
 Logic goes here
 
-## `~/.xonshrc`
+### `~/.xonshrc`
 
 ```python
 from contextlib import contextmanager

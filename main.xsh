@@ -49,7 +49,7 @@ def _cd(path):
     os.chdir(cwd)
 
 
-def set_path(paths=[
+def set_path(paths=[os.path.expanduser(p) for p in [
     # pipx
     '~/.local/bin',
     # homebrew/other
@@ -60,19 +60,19 @@ def set_path(paths=[
     '/usr/local/share/dotnet',
     # rust
     '~/.cargo/bin',
-    ]):
+    ]]):
     def is_venv_dir(path):
         return any(s in path for s in ['.virtualenvs/', 'venv/'])
+    
+    for p in $PATH:
+        if p in paths:
+            continue
+        elif is_venv_dir(p):
+            paths = [p] + paths
+        else:
+            paths.append(p)
 
-    # ensure explicit paths are put first
-    $PATH = paths + [p for p in $PATH if p not in paths]
-    # ensure virtualenv directory is first in $PATH
-    venv_dir, *_ = [p for p in $PATH if is_venv_dir(p)]
-    $PATH = [venv_dir] + [p for p in $PATH if not is_venv_dir(p)]
-    # deduplicate $PATH
-    seen = {}
-    $PATH = [seen.setdefault(p, p) for p in $PATH if p not in seen]
-
+    $PATH = paths
 
 
 def set_prompt():
