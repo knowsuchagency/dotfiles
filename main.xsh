@@ -49,7 +49,8 @@ def _cd(path):
     os.chdir(cwd)
 
 
-def set_path(paths=[os.path.expanduser(p) for p in [
+def set_path(paths=()):
+    _paths = [
     # pipx
     '~/.local/bin',
     # homebrew/other
@@ -60,7 +61,10 @@ def set_path(paths=[os.path.expanduser(p) for p in [
     '/usr/local/share/dotnet',
     # rust
     '~/.cargo/bin',
-    ]]):
+    ]
+    
+    paths = list(map(os.path.expanduser, (paths or _paths)))
+
     def is_venv_dir(path):
         return any(s in path for s in ['.virtualenvs/', 'venv/'])
     
