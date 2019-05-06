@@ -50,7 +50,7 @@ def _cd(path):
 
 
 def set_path(paths=()):
-    _paths = [
+    defaults = [
     # pipx
     '~/.local/bin',
     # homebrew/other
@@ -62,8 +62,8 @@ def set_path(paths=()):
     # rust
     '~/.cargo/bin',
     ]
-    
-    paths = list(map(os.path.expanduser, (paths or _paths)))
+
+    paths = list(map(os.path.expanduser, (paths or defaults)))
 
     def is_venv_dir(path):
         return any(s in path for s in ['.virtualenvs/', 'venv/'])
