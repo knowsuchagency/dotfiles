@@ -6,6 +6,7 @@ config at /etc/xonshrc
 from functools import wraps
 from pathlib import Path
 from contextlib import contextmanager
+import itertools as it
 import json
 import os
 
@@ -61,7 +62,18 @@ def set_path(paths=[
     # rust
     '~/.cargo/bin',
     ]):
+    def is_venv_dir(path):
+        return any(s in path for s in ['.virtualenvs/', 'venv/'])
+
+    # ensure explicit paths are put first
     $PATH = paths + [p for p in $PATH if p not in paths]
+    # ensure virtualenv directory is first in $PATH
+    venv_dir, *_ = [p for p in $PATH if is_venv_dir(p)]
+    $PATH = [venv_dir] + [p for p in $PATH if not is_venv_dir(p)]
+    # deduplicate $PATH
+    seen = {}
+    $PATH = [seen.setdefault(p, p) for p in $PATH if p not in seen]
+
 
 
 def set_prompt():
