@@ -1,6 +1,5 @@
 """
-reference for the base xonsh
-config at /etc/xonshrc
+This could be /etc/xonshrc
 """
 
 from functools import wraps
