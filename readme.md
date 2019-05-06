@@ -27,11 +27,11 @@ with _cd(main_parent_dir):
     set_xontribs()
 
     from env import *
-    from atlassian import *
+    from work import *
 ```
 
 
 ## misc
 
 * `env.xsh` -- common environment variables
-* `atlassian.xsh` -- work-related environment variables and utilities
+* `work.xsh` -- work-related environment variables and utilities
