@@ -158,8 +158,10 @@ def set_aliases():
     aliases['rebase'] = 'git pull --rebase origin master'
     aliases['untracked'] = 'git ls-files --others --exclude-standard'
 
-    aliases['docker-kill-all'] = "docker ps | grep -v CONTAINER | cut -d ' ' -f 1 | xargs docker kill -s 9"
-
+@alias
+def docker_kill_all():
+    for container in $(docker ps -q).splitlines():
+        docker kill @(container)
 
 def set_xontribs():
     $VOX_DEFAULT_INTERPRETER = '/usr/local/bin/python3'

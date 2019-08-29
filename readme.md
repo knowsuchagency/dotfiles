@@ -1,37 +1,10 @@
-## [main.xsh](main.xsh)
+<!-- Logic goes in [main.xsh](main.xsh)
 
-Logic goes here
+`~/.xonshrc` will import from [main.xsh](main.xsh) and execute its functions. -->
 
-### `~/.xonshrc`
-
-```python
-from contextlib import contextmanager
-from pathlib import Path
-import os
-
-main_parent_dir = Path(Path.home(), 'projects', 'dotfiles')
-
-@contextmanager
-def _cd(path):
-    cwd = os.getcwd()
-    os.chdir(path)
-    yield
-    os.chdir(cwd)
-
-with _cd(main_parent_dir):
-    from main import *
-
-    set_path()
-    set_prompt()
-    set_aliases()
-    set_xontribs()
-
-    from env import *
-    from work import *
-```
-
+TLDR: `./reset_xonsh.py`
 
 ## misc
 
 * `env.xsh` -- common environment variables
-* `work.xsh` -- work-related environment variables and utilities
+* `work.xsh` -- work-related environment variables and utilities (not in repo)
