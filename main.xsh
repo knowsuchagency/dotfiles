@@ -163,6 +163,11 @@ def docker_kill_all():
     for container in $(docker ps -q).splitlines():
         docker kill @(container)
 
+@alias
+def flush_dns_cache():
+    """Flush OS dns cache."""
+    sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
+
 def set_xontribs():
     $VOX_DEFAULT_INTERPRETER = '/usr/local/bin/python3'
     xontrib load vox
