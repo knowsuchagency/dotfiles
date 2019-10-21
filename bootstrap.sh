@@ -4,6 +4,7 @@ set -o verbose
 set -o xtrace
 
 echo install homebrew
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 $PATH="/usr/local/bin:$PATH"
@@ -25,11 +26,8 @@ python3 -m pipx install httpie
 
 brew install rust
 
-
-echo install binaries...
-
-
 brew tap homebrew/cask-fonts
+
 brew cask install font-hack-nerd-font
 
 brew cask install visual-studio-code
@@ -55,6 +53,7 @@ brew cask install spotify
 brew cask install private-internet-access
 
 git config --global user.name "Stephan Fitzpatrick"
+
 git config --global user.email knowsuchagency@gmail.com
 
 ./reset_xonsh.py
