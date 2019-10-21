@@ -50,6 +50,9 @@ brew cask install franz
 
 brew cask install dropbox
 
+git config --global user.name "Stephan Fitzpatrick"
+git config --global user.email knowsuchagency@gmail.com
+
 ./reset_xonsh.py
 
 chsh -s $(which xonsh)
