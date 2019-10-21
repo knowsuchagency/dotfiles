@@ -27,6 +27,16 @@ with _cd(main_parent_dir):
     set_aliases()
     set_xontribs()
 
+    env_file = Path(main_parent_dir, 'env.xsh')
+
+    if not env_file.exists():
+        env_file.write_text('...')
+
+    work_file = Path(main_parent_dir, 'work.xsh')
+
+    if not work_file.exists():
+        work_file.write_text('...')
+
     from env import *
     from work import *
 
