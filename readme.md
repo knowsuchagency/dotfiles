@@ -2,7 +2,7 @@
 
 `~/.xonshrc` will import from [main.xsh](main.xsh) and execute its functions. -->
 
-TLDR: `./reset_xonsh.py`
+TLDR (new machine): `./bootsrap.sh`
 
 ## misc
 
