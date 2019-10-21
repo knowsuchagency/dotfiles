@@ -52,6 +52,8 @@ brew cask install dropbox
 
 brew cask install spotify
 
+brew cask install private-internet-access
+
 git config --global user.name "Stephan Fitzpatrick"
 git config --global user.email knowsuchagency@gmail.com
 
