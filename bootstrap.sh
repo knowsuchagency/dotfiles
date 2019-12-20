@@ -7,7 +7,7 @@ echo install homebrew
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-$PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
 
 brew install python
 
@@ -23,8 +23,6 @@ python3 -m pipx install "xonsh[ptk,pygments,mac]"
 python3 -m pipx install black
 python3 -m pipx install poetry
 python3 -m pipx install httpie
-
-brew install rust
 
 brew tap homebrew/cask-fonts
 
@@ -46,7 +44,7 @@ brew cask install little-snitch
 
 brew cask install franz
 
-brew cask install dropbox
+brew cask install rust
 
 brew cask install spotify
 

@@ -10,7 +10,14 @@ from contextlib import contextmanager
 from pathlib import Path
 import os
 
-main_parent_dir = Path(Path.home(), 'projects', 'dotfiles')
+main_parent_dir = Path(
+    Path.home(),
+    "Library",
+    "Mobile Documents",
+    "com~apple~CloudDocs",
+    "projects",
+    "dotfiles",
+)
 
 @contextmanager
 def _cd(path):
@@ -26,6 +33,7 @@ with _cd(main_parent_dir):
     set_prompt()
     set_aliases()
     set_xontribs()
+    set_symlinks()
 
     env_file = Path(main_parent_dir, 'env.xsh')
 

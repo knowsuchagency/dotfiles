@@ -168,6 +168,28 @@ def flush_dns_cache():
     """Flush OS dns cache."""
     sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 
+@alias
+def set_symlinks():
+    """Configure symlinks from icloud to $HOME"""
+    # ln -s '~/Library/Mobile Documents/com~apple~CloudDocs/credentials' ~/.credentials
+    # ln -s '~/Library/Mobile Documents/com~apple~CloudDocs/projects' ~/projects
+    for symlink in ('.credentials', 'projects'):
+        dest = Path(Path.home(), symlink)
+        if not dest.exists():
+            source = Path(
+                Path.home(),
+                'Library',
+                'Mobile Documents',
+                'com~apple~CloudDocs',
+                symlink.lstrip('.')
+            )
+            os.symlink(source, dest)
+
+
+
+
 def set_xontribs():
     $VOX_DEFAULT_INTERPRETER = '/usr/local/bin/python3'
     xontrib load vox
+
+
