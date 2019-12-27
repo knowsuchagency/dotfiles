@@ -5,19 +5,14 @@ from pathlib import Path
 
 XONSH_RC = Path(Path.home(), '.xonshrc')
 
-BODY = """
+MAIN_PARENT_DIR = Path(__file__).parent.__fspath__()
+
+BODY = f"""
 from contextlib import contextmanager
 from pathlib import Path
 import os
 
-main_parent_dir = Path(
-    Path.home(),
-    "Library",
-    "Mobile Documents",
-    "com~apple~CloudDocs",
-    "projects",
-    "dotfiles",
-)
+main_parent_dir = "{MAIN_PARENT_DIR}"
 
 @contextmanager
 def _cd(path):
