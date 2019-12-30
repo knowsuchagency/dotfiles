@@ -24,6 +24,8 @@ python3 -m pipx install black
 python3 -m pipx install poetry
 python3 -m pipx install httpie
 
+brew install npm
+
 brew tap homebrew/cask-fonts
 
 brew cask install font-hack-nerd-font
