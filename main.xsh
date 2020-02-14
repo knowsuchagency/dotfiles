@@ -61,6 +61,8 @@ def set_path(paths=()):
     '/usr/local/share/dotnet',
     # rust
     '~/.cargo/bin',
+    # nim
+    '~/.nimble/bin',
     ]
 
     paths = list(map(os.path.expanduser, (paths or defaults)))
