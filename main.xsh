@@ -195,3 +195,5 @@ def set_xontribs():
     xontrib load vox
 
 
+def set_environment_variables():
+    $DOCKER_BUILDKIT=1

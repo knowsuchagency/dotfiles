@@ -34,6 +34,7 @@ with _cd(main_parent_dir):
     set_aliases()
     set_xontribs()
     set_symlinks()
+    set_environment_variables()
 
     env_file = Path(main_parent_dir, 'env.xsh')
 

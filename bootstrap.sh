@@ -26,6 +26,10 @@ python3 -m pipx install httpie
 
 brew install npm
 
+brew install awscli
+
+brew install buildkit
+
 brew tap homebrew/cask-fonts
 
 brew cask install font-hack-nerd-font
