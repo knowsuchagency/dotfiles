@@ -56,6 +56,8 @@ brew cask install spotify
 
 brew cask install private-internet-access
 
+npm install -g @aws-amplify/cli
+
 echo install nim
 
 curl https://nim-lang.org/choosenim/init.sh -sSf | sh
