@@ -56,13 +56,15 @@ def set_path(paths=()):
     # homebrew/other
     '/usr/local/bin',
     # mactex
-    '/usr/local/texlive/2018/bin/x86_64-darwin',
+    '/Library/TeX/texbin',
     # dotnet
     '/usr/local/share/dotnet',
     # rust
     '~/.cargo/bin',
     # nim
     '~/.nimble/bin',
+    # openjdk
+    '/usr/local/opt/openjdk/bin',
     ]
 
     paths = list(map(os.path.expanduser, (paths or defaults)))
@@ -113,6 +115,37 @@ def set_aliases():
         git push origin @($(git branch | grep \* | cut -d ' ' -f2).strip())
 
     @alias
+    def cleanup():
+
+        path = Path.cwd()
+
+        paths_to_unlink = list(path.rglob("* 2"))
+
+        if not paths_to_unlink:
+
+            print("no duplicates to clean up")
+
+            return
+
+        for p in paths_to_unlink:
+
+            print(p)
+
+        unlink = input("Unlink the above files? y/N")
+
+        print(f"{unlink=}")
+
+        print(f'{unlink.lower().strip().startswith("y")=}')
+
+        if unlink.lower().strip().startswith("y"):
+
+            for p in paths_to_unlink:
+
+                print(f"unlinking {p}")
+
+                p.unlink()
+
+    @alias
     def cpu_above(args):
         from pprint import pprint
         import argparse
@@ -150,6 +183,8 @@ def set_aliases():
     aliases['jl'] = ['jupyter', 'labdash']
     aliases['jn'] = ['jupyter', 'notebook']
 
+    aliases['dc'] = 'docker-compose'
+ 
     aliases['gs'] = 'git status'
     aliases['gc'] = 'git commit'
     aliases['gcm'] = 'git commit -m'
@@ -158,7 +193,10 @@ def set_aliases():
     aliases['gp'] = 'git push'
     aliases['gri'] = 'git rebase -i master'
     aliases['rebase'] = 'git pull --rebase origin master'
+    aliases['rebase-prefer-ours'] = 'git pull --rebase -Xtheirs origin master'
     aliases['untracked'] = 'git ls-files --others --exclude-standard'
+    aliases['pipx'] = '/usr/local/bin/python3 -m pipx'
+    aliases['tf'] = 'terraform'
 
 @alias
 def docker_kill_all():
@@ -188,12 +226,6 @@ def set_symlinks():
             os.symlink(source, dest)
 
 
-
-
 def set_xontribs():
     $VOX_DEFAULT_INTERPRETER = '/usr/local/bin/python3'
     xontrib load vox
-
-
-def set_environment_variables():
-    $DOCKER_BUILDKIT=1
