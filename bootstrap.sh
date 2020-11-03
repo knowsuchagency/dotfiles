@@ -11,28 +11,31 @@ PATH="/usr/local/bin:$PATH"
 
 brew install python
 
-brew install python@3.8
-
-ln -s /usr/local/opt/python@3.8/bin/python3.8 /usr/local/bin/python3.8
-
 python3 -m pip install -U pip
-
-python3.8 -m pip install -U pip
 
 echo install python cli utilities
 
-python3.8 -m pip install pipx
+python3 -m pip install pipx
 
-python3.8 -m pipx ensurepath
+python3 -m pipx ensurepath
 
 PATH="$HOME/.local/bin:$PATH"
 
-python3.8 -m pipx install "xonsh[ptk,pygments,mac]"
-python3.8 -m pipx install black
-python3.8 -m pipx install poetry
-python3.8 -m pipx install httpie
-python3.8 -m pipx install asciinema
-python3.8 -m pipx install cookiecutter
+python3 -m pipx install "xonsh[ptk,pygments,mac]"
+python3 -m pipx install black
+python3 -m pipx install poetry
+python3 -m pipx install httpie
+python3 -m pipx install asciinema
+python3 -m pipx install cookiecutter
+python3 -m pipx install dbt
+
+brew tap fishtown-analytics/dbt
+
+brew install dbt
+
+brew install stern
+
+brew install doctl
 
 brew install npm
 
@@ -49,6 +52,8 @@ brew install hugo
 brew install docker-slim
 
 brew install terraform
+
+brew install cdktf
 
 brew tap homebrew/cask-fonts
 
@@ -82,7 +87,15 @@ brew cask install private-internet-access
 
 brew cask install google-chrome
 
+brew cask install dotnet-sdk
+
+dotnet tool install fake-cli -g
+
+dotnet new -i "fake-template::*"
+
 npm install -g @aws-amplify/cli
+
+npm install -g aws-cdk
 
 echo install nim
 

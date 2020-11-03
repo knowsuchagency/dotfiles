@@ -119,7 +119,7 @@ def set_aliases():
 
         path = Path.cwd()
 
-        paths_to_unlink = list(path.rglob("* 2"))
+        paths_to_unlink = list(path.rglob("* 2*"))
 
         if not paths_to_unlink:
 
@@ -133,15 +133,9 @@ def set_aliases():
 
         unlink = input("Unlink the above files? y/N")
 
-        print(f"{unlink=}")
-
-        print(f'{unlink.lower().strip().startswith("y")=}')
-
         if unlink.lower().strip().startswith("y"):
 
             for p in paths_to_unlink:
-
-                print(f"unlinking {p}")
 
                 p.unlink()
 
