@@ -117,7 +117,7 @@ git config --global user.email knowsuchagency@gmail.com
 
 git config --global pull.ff only
 
-ln -s /Users/stephanfitzpatrick/Library/Mobile\ Documents/com\~apple\~CloudDocs/projects ~/projects
+# ln -s /Users/stephanfitzpatrick/Library/Mobile\ Documents/com\~apple\~CloudDocs/projects ~/projects
 
 echo install ohmyzsh
 
