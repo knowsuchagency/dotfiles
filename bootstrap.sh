@@ -3,6 +3,8 @@
 set -o verbose
 set -o xtrace
 
+xcode-select --install
+
 echo install homebrew
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -29,6 +31,12 @@ python3 -m pipx install asciinema
 python3 -m pipx install cookiecutter
 python3 -m pipx install dbt
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+exec $SHELL
+
+nvm install node
+
 brew tap fishtown-analytics/dbt
 
 brew install dbt
@@ -37,7 +45,7 @@ brew install stern
 
 brew install doctl
 
-brew install npm
+# brew install npm
 
 brew install awscli
 
@@ -49,45 +57,47 @@ brew install buildkit
 
 brew install hugo
 
-brew install docker-slim
-
 brew install terraform
 
-brew install cdktf
+brew install starship
+
+brew tap lucagrulla/tap
+
+brew install cw
+
+brew install nim
 
 brew tap homebrew/cask-fonts
 
-brew cask install font-hack-nerd-font
+brew install font-hack-nerd-font --cask
 
-brew cask install visual-studio-code
+brew install visual-studio-code --cask
 
-brew cask install jetbrains-toolbox
+brew install jetbrains-toolbox --cask
 
-brew cask install iterm2
+brew install docker --cask
 
-brew cask install docker
+brew install dash --cask
 
-brew cask install dash
+brew install bartender --cask
 
-brew cask install bartender
+brew install postman --cask
 
-brew cask install postman
+brew install istat-menus --cask
 
-brew cask install istat-menus
+brew install little-snitch --cask
 
-brew cask install little-snitch
+brew install franz --cask
 
-brew cask install franz
+brew install rust --cask
 
-brew cask install rust
+brew install spotify --cask
 
-brew cask install spotify
+brew install private-internet-access --cask
 
-brew cask install private-internet-access
+brew install google-chrome --cask
 
-brew cask install google-chrome
-
-brew cask install dotnet-sdk
+brew install dotnet-sdk --cask
 
 dotnet tool install fake-cli -g
 
@@ -97,16 +107,16 @@ npm install -g @aws-amplify/cli
 
 npm install -g aws-cdk
 
-echo install nim
-
-curl https://nim-lang.org/choosenim/init.sh -sSf | sh
-
 echo configure git
 
 git config --global user.name "Stephan Fitzpatrick"
 
 git config --global user.email knowsuchagency@gmail.com
 
-./reset_xonsh.py
+git config --global pull.ff only
 
-chsh -s $(which xonsh)
+ln -s /Users/stephanfitzpatrick/Library/Mobile\ Documents/com\~apple\~CloudDocs/projects ~/projects
+
+echo install ohmyzsh
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
