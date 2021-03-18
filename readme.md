@@ -1,10 +1,7 @@
-<!-- Logic goes in [main.xsh](main.xsh)
+TLDR (new machine): sh -c "$(curl -fsSL https://raw.githubusercontent.com/knowsuchagency/dotfiles/master/bootstrap.sh)"
 
-`~/.xonshrc` will import from [main.xsh](main.xsh) and execute its functions. -->
+Add the following to your `~/.zshrc`
 
-TLDR (new machine): `./bootsrap.sh`
-
-## misc
-
-* `env.xsh` -- common environment variables
-* `work.xsh` -- work-related environment variables and utilities (not in repo)
+```zsh
+eval "$(starship init zsh)"
+```
