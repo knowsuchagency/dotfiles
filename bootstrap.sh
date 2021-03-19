@@ -13,33 +13,21 @@ PATH="/usr/local/bin:$PATH"
 
 brew install python
 
-python3 -m pip install -U pip
+brew install httpie
 
-echo install python cli utilities
+brew install black
 
 brew install pipx
 
 pipx ensurepath
 
-pipx install "xonsh[ptk,pygments,mac]"
-pipx install black
-pipx install poetry
-pipx install httpie
-pipx install asciinema
-pipx install cookiecutter
-pipx install dbt
+ curl https://pyenv.run | bash
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
 exec $SHELL
 
 nvm install node # "node" is an alias for the latest version
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-
-# exec $SHELL
-
-nvm install node
 
 brew tap fishtown-analytics/dbt
 
