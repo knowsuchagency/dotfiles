@@ -33,7 +33,7 @@ python3 -m pipx install dbt
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
-exec $SHELL
+# exec $SHELL
 
 nvm install node
 
