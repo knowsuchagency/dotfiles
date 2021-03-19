@@ -21,7 +21,7 @@ brew install pipx
 
 pipx ensurepath
 
- curl https://pyenv.run | bash
+curl https://pyenv.run | bash
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
