@@ -6,7 +6,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/knowsuchagency/dotfiles/ma
 
 Add the following to `~/.zshrc`
 
-<detail open>
+<details>
 
 ```zsh
 # set paths
@@ -75,4 +75,4 @@ eval "$(pyenv virtualenv-init -)"
 
 ```
 
-</detail>
+</details>
