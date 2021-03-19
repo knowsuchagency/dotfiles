@@ -1,5 +1,3 @@
-Terminal Themes: https://github.com/lysyi3m/macos-terminal-themes
-
 ```zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/knowsuchagency/dotfiles/master/bootstrap.sh)"
 ```
@@ -76,3 +74,5 @@ eval "$(pyenv virtualenv-init -)"
 ```
 
 </details>
+
+Terminal Themes: https://github.com/lysyi3m/macos-terminal-themes
