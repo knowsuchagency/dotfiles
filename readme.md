@@ -1,8 +1,12 @@
+## Bootstrap
+
 ```zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/knowsuchagency/dotfiles/master/bootstrap.sh)"
 ```
 
-Add the following to `~/.zshrc`
+---
+
+## Update RC File
 
 <details>
 
@@ -75,4 +79,6 @@ eval "$(pyenv virtualenv-init -)"
 
 </details>
 
-Terminal Themes: https://github.com/lysyi3m/macos-terminal-themes
+---
+
+## [Theme terminal](https://github.com/lysyi3m/macos-terminal-themes)
