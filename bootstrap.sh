@@ -69,6 +69,9 @@ brew install nim
 
 brew install helm
 
+brew tap aws/tap
+brew install aws-sam-cli
+
 brew tap homebrew/cask-fonts
 
 brew install font-hack-nerd-font --cask
