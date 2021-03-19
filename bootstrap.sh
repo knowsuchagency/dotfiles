@@ -17,19 +17,23 @@ python3 -m pip install -U pip
 
 echo install python cli utilities
 
-python3 -m pip install pipx
+brew install pipx
 
-python3 -m pipx ensurepath
+pipx ensurepath
 
-PATH="$HOME/.local/bin:$PATH"
+pipx install "xonsh[ptk,pygments,mac]"
+pipx install black
+pipx install poetry
+pipx install httpie
+pipx install asciinema
+pipx install cookiecutter
+pipx install dbt
 
-python3 -m pipx install "xonsh[ptk,pygments,mac]"
-python3 -m pipx install black
-python3 -m pipx install poetry
-python3 -m pipx install httpie
-python3 -m pipx install asciinema
-python3 -m pipx install cookiecutter
-python3 -m pipx install dbt
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+exec $SHELL
+
+nvm install node # "node" is an alias for the latest version
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
@@ -44,8 +48,6 @@ brew install dbt
 brew install stern
 
 brew install doctl
-
-# brew install npm
 
 brew install awscli
 
@@ -119,8 +121,6 @@ git config --global user.name "Stephan Fitzpatrick"
 git config --global user.email knowsuchagency@gmail.com
 
 git config --global pull.ff only
-
-# ln -s /Users/stephanfitzpatrick/Library/Mobile\ Documents/com\~apple\~CloudDocs/projects ~/projects
 
 echo install ohmyzsh
 
