@@ -47,8 +47,6 @@ alias gp='git push'
 
 alias dc='docker-compose'
 
-alias inv
-
 # env vars
 
 export CDK_NEW_BOOTSTRAP=1
