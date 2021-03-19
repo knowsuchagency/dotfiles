@@ -10,4 +10,8 @@ Add the following to your `~/.zshrc`
 
 ```zsh
 eval "$(starship init zsh)"
+
+export PATH="/Users/stephanfitzpatrick/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 ```
