@@ -13,13 +13,9 @@ PATH="/usr/local/bin:$PATH"
 
 brew install python
 
-brew install pdm
-
-brew install httpie
-
-brew install black
-
 brew install pipx
+
+pipx install pdm
 
 pipx ensurepath
 
