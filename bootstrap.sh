@@ -1,7 +1,6 @@
 #!/bin/bash
 
-set -o verbose
-set -o xtrace
+set -x
 
 xcode-select --install
 
@@ -22,8 +21,6 @@ pipx ensurepath
 curl https://pyenv.run | bash
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-
-exec $SHELL
 
 nvm install node # "node" is an alias for the latest version
 
