@@ -66,13 +66,6 @@ function gpbf {
 # starship prompt
 
 eval "$(starship init zsh)"
-
-# pyenv
-
-export PATH="/Users/stephanfitzpatrick/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 ```
 
 </details>
