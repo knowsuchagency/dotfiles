@@ -63,6 +63,8 @@ brew install font-hack-nerd-font --cask
 
 brew install visual-studio-code --cask
 
+brew install slack --cask
+
 brew install jetbrains-toolbox --cask
 
 brew install docker --cask
