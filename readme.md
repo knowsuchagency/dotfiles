@@ -38,6 +38,8 @@ alias tf='terraform'
 alias py='python'
 alias py3='python3'
 
+alias pip-uninstall-all='pip freeze | grep -v "^-e" | xargs pip uninstall -y'
+
 alias gs='git status'
 alias gc='git commit'
 alias gcm='git commit -m'
