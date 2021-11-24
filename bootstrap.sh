@@ -54,6 +54,10 @@ brew install nim
 
 brew install helm
 
+brew install jc
+
+brew install jello
+
 brew tap aws/tap
 brew install aws-sam-cli
 
