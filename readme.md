@@ -6,7 +6,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/knowsuchagency/dotfiles/ma
 
 ---
 
-## Update RC File
+## Update ~/.zprofile
 
 <details>
 

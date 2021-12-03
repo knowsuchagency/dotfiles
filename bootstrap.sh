@@ -24,9 +24,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
 nvm install node # "node" is an alias for the latest version
 
-brew tap fishtown-analytics/dbt
-
-brew install dbt
+brew install gh
 
 brew install stern
 
@@ -42,13 +40,7 @@ brew install buildkit
 
 brew install hugo
 
-brew install terraform
-
 brew install starship
-
-brew tap lucagrulla/tap
-
-brew install cw
 
 brew install nim
 
@@ -59,7 +51,6 @@ brew install jc
 brew install jello
 
 brew tap aws/tap
-brew install aws-sam-cli
 
 brew tap homebrew/cask-fonts
 
@@ -92,12 +83,6 @@ brew install spotify --cask
 brew install private-internet-access --cask
 
 brew install google-chrome --cask
-
-brew install dotnet-sdk --cask
-
-dotnet tool install fake-cli -g
-
-dotnet new -i "fake-template::*"
 
 npm install -g @aws-amplify/cli
 
