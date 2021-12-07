@@ -28,6 +28,8 @@ brew install gh
 
 brew install stern
 
+brew install just
+
 brew install doctl
 
 brew install awscli
