@@ -70,7 +70,7 @@ brew install dash --cask
 
 brew install bartender --cask
 
-brew install postman --cask
+brew install --cask http-toolkit
 
 brew install istat-menus --cask
 
