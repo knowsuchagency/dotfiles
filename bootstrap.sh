@@ -56,7 +56,7 @@ brew tap aws/tap
 
 brew tap homebrew/cask-fonts
 
-brew install font-hack-nerd-font --cask
+brew install font-jetbrains-mono --cask
 
 brew install visual-studio-code --cask
 
