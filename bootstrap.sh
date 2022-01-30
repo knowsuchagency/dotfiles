@@ -58,11 +58,13 @@ brew tap homebrew/cask-fonts
 
 brew install font-jetbrains-mono --cask
 
+brew install google-chrome --cask
+
+brew install jetbrains-toolbox --cask
+
 brew install visual-studio-code --cask
 
 brew install slack --cask
-
-brew install jetbrains-toolbox --cask
 
 brew install docker --cask
 
@@ -83,8 +85,6 @@ brew install rust --cask
 brew install spotify --cask
 
 brew install private-internet-access --cask
-
-brew install google-chrome --cask
 
 npm install -g @aws-amplify/cli
 
