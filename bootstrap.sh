@@ -62,13 +62,13 @@ brew install google-chrome --cask
 
 brew install jetbrains-toolbox --cask
 
+brew install dash --cask
+
 brew install visual-studio-code --cask
 
 brew install slack --cask
 
 brew install docker --cask
-
-brew install dash --cask
 
 brew install bartender --cask
 
