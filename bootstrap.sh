@@ -52,6 +52,8 @@ brew install jc
 
 brew install jello
 
+brew install postgresql
+
 brew tap aws/tap
 
 brew tap homebrew/cask-fonts
