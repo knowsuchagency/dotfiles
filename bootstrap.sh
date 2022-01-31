@@ -16,6 +16,8 @@ brew install pipx
 
 pipx install pdm
 
+pipx install "python-dotenv[cli]"
+
 pipx ensurepath
 
 curl https://pyenv.run | bash
