@@ -62,6 +62,8 @@ brew tap homebrew/cask-fonts
 
 brew install font-jetbrains-mono --cask
 
+brew install font-jetbrains-mono-nerd-font --cask
+
 brew install google-chrome --cask
 
 brew install jetbrains-toolbox --cask
