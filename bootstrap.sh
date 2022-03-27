@@ -36,6 +36,8 @@ brew install doctl
 
 brew install awscli
 
+brew install firebase-cli
+
 brew install tldr
 
 brew install tree
