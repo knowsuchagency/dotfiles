@@ -58,6 +58,8 @@ brew install jello
 
 brew install postgresql
 
+brew install supabase/tap/supabase
+
 brew tap aws/tap
 
 brew tap homebrew/cask-fonts
