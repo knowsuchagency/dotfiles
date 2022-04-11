@@ -100,6 +100,8 @@ npm install -g @aws-amplify/cli
 
 npm install -g aws-cdk
 
+npm install -g vercel
+
 echo configure git
 
 git config --global user.name "Stephan Fitzpatrick"
