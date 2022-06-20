@@ -102,6 +102,8 @@ npm install -g aws-cdk
 
 npm install -g vercel
 
+npm install -g concurrently
+
 echo configure git
 
 git config --global user.name "Stephan Fitzpatrick"
