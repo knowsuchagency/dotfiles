@@ -58,6 +58,8 @@ brew install jello
 
 brew install postgresql
 
+brew install gibo
+
 brew install supabase/tap/supabase
 
 brew tap aws/tap
