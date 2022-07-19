@@ -98,6 +98,8 @@ brew install spotify --cask
 
 brew install private-internet-access --cask
 
+brew install --cask aws-vault
+
 npm install -g @aws-amplify/cli
 
 npm install -g aws-cdk
