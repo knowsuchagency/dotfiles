@@ -60,6 +60,8 @@ brew install postgresql
 
 brew install gibo
 
+brew install flyctl
+
 brew install supabase/tap/supabase
 
 brew tap aws/tap
