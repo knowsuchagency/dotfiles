@@ -80,8 +80,6 @@ brew install dash --cask
 
 brew install visual-studio-code --cask
 
-brew install slack --cask
-
 brew install docker --cask
 
 brew install bartender --cask
