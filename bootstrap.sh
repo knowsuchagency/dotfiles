@@ -62,6 +62,8 @@ brew install gibo
 
 brew install flyctl
 
+brew install direnv
+
 brew install supabase/tap/supabase
 
 brew tap aws/tap
