@@ -110,6 +110,8 @@ npm install -g vercel
 
 npm install -g concurrently
 
+npm install -g @githubnext/github-copilot-cli
+
 echo configure git
 
 git config --global user.name "Stephan Fitzpatrick"
