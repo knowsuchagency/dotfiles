@@ -10,6 +10,31 @@ source $ZSH/oh-my-zsh.sh
 
 unalias gcm
 
+# env vars
+
+export CDK_NEW_BOOTSTRAP=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
+
+
+# brew ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+
+# nvm
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# homebrew
+
+export HOMEBREW_NO_ANALYTICS=1
+
+# oh my zshell
+
+DISABLE_UPDATE_PROMPT=true
+
 # aliases
 
 alias docker-kill-all='docker kill $(docker ps -q)'
