@@ -125,6 +125,9 @@ echo install ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # overwrite zshrc and zlogin
+mv ~/.zlogin ~/.zlogin.bak
+mv ~/.zshrc ~/.zshrc.bak
 curl -L https://raw.githubusercontent.com/knowsuchagency/dotfiles/master/.zlogin > ~/.zlogin
 curl -L https://raw.githubusercontent.com/knowsuchagency/dotfiles/master/.zshrc > ~/.zshrc
+
 
