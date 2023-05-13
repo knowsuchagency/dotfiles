@@ -127,7 +127,5 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # overwrite zshrc and zlogin
 mv ~/.zlogin ~/.zlogin.bak
 mv ~/.zshrc ~/.zshrc.bak
-curl -L https://raw.githubusercontent.com/knowsuchagency/dotfiles/master/.zlogin > ~/.zlogin
+curl -L https://raw.githubusercontent.com/knowsuchagency/dotfiles/master/.zprofile > ~/.zprofile
 curl -L https://raw.githubusercontent.com/knowsuchagency/dotfiles/master/.zshrc > ~/.zshrc
-
-
