@@ -28,9 +28,9 @@ nvm install node # "node" is an alias for the latest version
 
 brew install gh
 
-brew install stern
-
 brew install just
+
+brew install pandoc
 
 brew install doctl
 
@@ -91,8 +91,6 @@ brew install --cask http-toolkit
 brew install istat-menus --cask
 
 brew install little-snitch --cask
-
-brew install franz --cask
 
 brew install rust --cask
 
