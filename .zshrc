@@ -55,7 +55,7 @@ alias gpr='git pull --rebase'
 
 alias dc='docker-compose'
 
-alias pj='npx projen'
+alias django-init='django-admin startproject --template=https://github.com/knowsuchagency/django-template/archive/main.zip'
 
 # functions
 
