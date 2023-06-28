@@ -55,6 +55,8 @@ alias gpr='git pull --rebase'
 
 alias dc='docker-compose'
 
+alias pj='npx projen'
+
 # functions
 
 gpb () {
