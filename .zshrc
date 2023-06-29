@@ -55,9 +55,22 @@ alias gpr='git pull --rebase'
 
 alias dc='docker-compose'
 
-alias django-init='django-admin startproject --template=https://github.com/knowsuchagency/django-template/archive/main.zip'
 
 # functions
+
+new_django_project() {
+    if [ -z "$1" ]
+    then
+        echo "Please enter your project name: "
+        read project_name
+    else
+        project_name="$1"
+    fi
+    # make sure you have django-admin installed globally in a 3.10 interpreter
+    curl https://raw.githubusercontent.com/knowsuchagency/django-template/main/install.sh | bash -s "$project_name"
+}
+
+alias new-django-project='new_django_project'
 
 gpb () {
     local current_branch=$(git branch --show-current)
