@@ -64,6 +64,8 @@ brew install flyctl
 
 brew install direnv
 
+brew install atuin
+
 brew install supabase/tap/supabase
 
 brew tap aws/tap
