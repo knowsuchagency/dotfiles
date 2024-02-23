@@ -102,6 +102,8 @@ brew install private-internet-access --cask
 
 brew install --cask aws-vault
 
+brew install --cask google-cloud-sdk
+
 npm install -g @aws-amplify/cli
 
 npm install -g aws-cdk
@@ -111,6 +113,11 @@ npm install -g vercel
 npm install -g concurrently
 
 npm install -g @githubnext/github-copilot-cli
+
+echo "configure google cloud sdk"
+
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 echo configure git
 
