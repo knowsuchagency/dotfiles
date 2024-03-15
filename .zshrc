@@ -54,6 +54,7 @@ alias gp='git push'
 alias gpr='git pull --rebase'
 
 alias dc='docker-compose'
+alias cd='zoxide'
 
 
 # functions
@@ -114,3 +115,6 @@ eval "$(github-copilot-cli alias -- "$0")"
 eval "$(starship init zsh)"
 
 eval "$(direnv hook zsh)"
+
+eval "$(zoxide init zsh)"
+
