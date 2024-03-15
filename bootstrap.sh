@@ -66,6 +66,14 @@ brew install direnv
 
 brew install atuin
 
+brew install ruff
+
+brew install uv
+
+brew install fzf
+
+brew install zoxide
+
 brew install supabase/tap/supabase
 
 brew tap aws/tap
