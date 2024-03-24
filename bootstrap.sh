@@ -66,6 +66,8 @@ brew install direnv
 
 brew install atuin
 
+brew install monolith
+
 brew install ruff
 
 brew install uv
