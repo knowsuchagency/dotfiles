@@ -82,6 +82,10 @@ brew tap aws/tap
 
 brew tap homebrew/cask-fonts
 
+brew install orbstack
+
+brew install --cask warp
+
 brew install font-jetbrains-mono --cask
 
 brew install font-jetbrains-mono-nerd-font --cask
