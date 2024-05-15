@@ -98,8 +98,6 @@ brew install dash --cask
 
 brew install visual-studio-code --cask
 
-brew install docker --cask
-
 brew install bartender --cask
 
 brew install --cask http-toolkit
