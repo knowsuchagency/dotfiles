@@ -54,7 +54,9 @@ alias gp='git push'
 alias gpr='git pull --rebase'
 
 alias dc='docker-compose'
-alias cd='zoxide'
+# alias cd='zoxide'
+alias activate='. .venv/bin/activate'
+
 
 
 # functions
