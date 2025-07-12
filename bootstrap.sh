@@ -84,6 +84,10 @@ brew tap homebrew/cask-fonts
 
 brew install orbstack
 
+brew install carapace
+
+brew install jujutsu
+
 brew install --cask warp
 
 brew install font-jetbrains-mono --cask
