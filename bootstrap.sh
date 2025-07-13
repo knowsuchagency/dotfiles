@@ -28,6 +28,8 @@ nvm install node # "node" is an alias for the latest version
 
 brew install gh
 
+brew install go
+
 brew install just
 
 brew install pandoc

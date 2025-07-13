@@ -125,3 +125,5 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 
+# golang
+export PATH="$(go env GOPATH)/bin:$PATH"
