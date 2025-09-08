@@ -27,5 +27,10 @@ export PATH="$PATH:/Users/stephanfitzpatrick/.local/bin"
 # Added by Toolbox App
 export PATH="$PATH:/Users/stephanfitzpatrick/Library/Application Support/JetBrains/Toolbox/scripts"
 
+# pypi flit
+export FLIT_USERNAME=__token__
+# export FLIT_PASSWORD=<YOUR_PYPI_TOKEN_HERE>
+
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+# eval "$(mise activate zsh --shims)"

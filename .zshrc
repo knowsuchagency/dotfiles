@@ -24,8 +24,8 @@ export PATH="/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 # nvm
 
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # homebrew
 
@@ -58,7 +58,6 @@ alias dc='docker-compose'
 alias activate='. .venv/bin/activate'
 
 
-
 # functions
 
 new_django_project() {
@@ -69,8 +68,9 @@ new_django_project() {
     else
         project_name="$1"
     fi
-    # make sure you have django-admin installed globally in a 3.10 interpreter
-    curl https://raw.githubusercontent.com/knowsuchagency/django-template/main/install.sh | bash -s "$project_name"
+    pipx run copier copy gh:knowsuchagency/django-template -d project_name=$project_name $project_name
+    cd $project_name
+    just init runserver
 }
 
 alias new-django-project='new_django_project'
@@ -112,13 +112,42 @@ function gcm {
   fi
 }
 
+# yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+
 eval "$(github-copilot-cli alias -- "$0")"
 
 eval "$(starship init zsh)"
 
-eval "$(direnv hook zsh)"
 
 eval "$(zoxide init zsh)"
+
+# bun
+export BUN_INSTALL="$HOME/Library/Application Support/reflex/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/stephanfitzpatrick/.codeium/windsurf/bin:$PATH"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Bun
+alias bunx='bun x'
+
+# Claude
+alias claude="/Users/stephanfitzpatrick/.claude/local/claude"
+alias ccp="claude  --dangerously-skip-permissions"
 
 # carapace
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
@@ -127,3 +156,73 @@ source <(carapace _carapace)
 
 # golang
 export PATH="$(go env GOPATH)/bin:$PATH"
+
+# helix
+export EDITOR="hx"
+
+# lazygit
+alias lg="lazygit"
+
+# jujutsu push parent function
+jjp() {
+    local target_branch="${1}"
+    
+    if [ -z "$target_branch" ]; then
+        echo "Usage: jjp <branch-name>"
+        echo "Sets the specified branch to @- and pushes it to remote"
+        return 1
+    fi
+    
+    echo "Setting $target_branch to @- and pushing..."
+    jj bookmark set "$target_branch" -r @- --allow-backwards && jj git push --branch "$target_branch" --allow-new
+}
+
+# check @- commit and @ working set for anthropic co-author and exit with code 2 if found
+check_anthropic_coauthor() {
+    # Check the @- commit (parent)
+    local commit_msg=$(jj log -r @- --no-graph -T description 2>/dev/null)
+    
+    if [ $? -ne 0 ]; then
+        echo "ERROR: Failed to get commit message for @-" >&2
+        exit 1
+    fi
+    
+    # Check for noreply@anthropic.com (case-sensitive) in @-
+    if echo "$commit_msg" | grep -q "noreply@anthropic.com"; then
+        echo "ERROR: Parent commit (@-) contains AI attribution which may cause automatic rejection by project policies. Please edit the parent commit description and remove AI attribution." >&2
+        exit 2
+    fi
+    
+    # Check for Co-Authored-By: Claude (case-insensitive) in @-
+    if echo "$commit_msg" | grep -qi "Co-Authored-By: Claude"; then
+        echo "ERROR: Parent commit (@-) contains AI attribution which may cause automatic rejection by project policies. Please edit the parent commit description and remove AI attribution." >&2
+        exit 2
+    fi
+    
+    # Check the @ working set description
+    local working_msg=$(jj log -r @ --no-graph -T description 2>/dev/null)
+    
+    if [ $? -ne 0 ]; then
+        echo "ERROR: Failed to get working set description for @" >&2
+        exit 1
+    fi
+    
+    # Check for noreply@anthropic.com (case-sensitive) in @
+    if echo "$working_msg" | grep -q "noreply@anthropic.com"; then
+        echo "ERROR: Working set (@) contains AI attribution which may cause automatic rejection by project policies. Please edit the working set description with 'jj describe' and remove AI attribution." >&2
+        exit 2
+    fi
+    
+    # Check for Co-Authored-By: Claude (case-insensitive) in @
+    if echo "$working_msg" | grep -qi "Co-Authored-By: Claude"; then
+        echo "ERROR: Working set (@) contains AI attribution which may cause automatic rejection by project policies. Please edit the working set description with 'jj describe' and remove AI attribution." >&2
+        exit 2
+    fi
+    
+    echo "OK: Both @- commit and @ working set do not contain Anthropic attribution"
+    return 0
+}
+
+eval "$(mise activate zsh)"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.tgenv/bin:$PATH"
