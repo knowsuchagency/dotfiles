@@ -172,6 +172,9 @@ jjp() {
         echo "Sets the specified branch to @- and pushes it to remote"
         return 1
     fi
+
+    # Check for AI attribution in both @- and @
+    check_anthropic_coauthor || return $?
     
     echo "Setting $target_branch to @- and pushing..."
     jj bookmark set "$target_branch" -r @- --allow-backwards && jj git push --branch "$target_branch" --allow-new
